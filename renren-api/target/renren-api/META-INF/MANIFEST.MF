@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Implementation-Version: 3.2.0
+Built-By: 对方正在输入
+Implementation-Vendor-Id: io.renren
+Created-By: IntelliJ IDEA
+Build-Jdk: 1.8.0_151
+Main-Class: ${start-class}
+

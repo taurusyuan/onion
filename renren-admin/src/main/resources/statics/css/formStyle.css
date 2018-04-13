@@ -1,0 +1,381 @@
+body {
+    background-color: #ffffff; /*页面背景颜色*/
+}
+
+.service_unselected{
+    display: none;
+}
+
+div.service_unselected input{
+    disabled: disabled;
+}
+
+.service_selected{
+}
+
+.ue-container {
+    /*width: 60%;*/
+    margin-top: 3%;
+    margin-bottom: 20px;
+    /*padding: 20px 20px;*/
+    /*border: 1px solid #ddd;*/
+    background: #fff;
+}
+.multi-container {
+    margin-top: 1%;
+    margin-bottom: 20px;
+    background: #fff;
+}
+
+.btn-box{
+    padding-top: 6%;
+    text-align: center;
+}
+
+.wrapper-content {
+    padding: 0px !important; /*wrapper-content去除内边距*/
+}
+
+/*搜索部分*/
+.searchspan {
+    display: -moz-inline-box;
+    display: inline-block;
+}
+
+.searchname {
+    line-height: 34px; /*span垂直居中*/
+    vertical-align: middle;
+    /*width: 100px;*/
+    text-align: left;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    float: left;
+    margin-top: 4px;
+    margin-left: 4px;
+}
+
+#searchcolums input {
+    vertical-align: middle;
+}
+
+
+/*表格部分*/
+.fontcolor {
+    /*color: black;*/
+    color:#8bb4e7;
+    font-family: "Microsoft Yahei", Arial;
+}
+
+/*评价模型设置*/
+.modulefont {
+    font-family: "Microsoft Yahei", Arial;
+    font-weight: bold;
+    font-size: large;!important;
+    color: white;
+    padding:12px;
+}
+
+#handle .ui-button:hover {
+    color:#8bb4e7;
+}
+
+#handle .ui-button:visited {
+    color:#8bb4e7;
+}
+
+#handle .ui-button:link {
+    color:#8bb4e7;
+}
+
+a:hover a:visited a:link {
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+a:link {
+    color: black;
+}
+
+.ibox-title {
+    /*background-color: #EEEEEE;*/
+    background-color: #f5f8fd;
+    border-color: #8bb4e7;
+    color: #010407;
+
+}
+.ibox-title-upper {
+    /*background-color: #EEEEEE;*/
+    /* background-color: #f5f8fd;*/
+    border-color: #f5f8fd;
+    /* border-color: #8bb4e7;*/
+    color: #010407;
+
+}
+
+.selected {
+    background-color: #cce6ff; /*定义选中状态颜色*/
+}
+
+#td {
+    white-space: nowrap; /*//规定段落中的文本不进行换行*/
+}
+
+
+/*.modal-body {
+    padding: 0px 30px 0px 30px
+}*/
+
+/*.row {
+    border-bottom: 1px solid #e4e4e4;
+    border-top: 1px solid #e4e4e4;
+}
+*/
+
+
+.row input { /*设置外边距*/
+    margin: 2px 0 2px 0;
+}
+
+
+.probeform_title {
+    margin: 10px 0 0 0 !important;
+    background-color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "Microsoft Yahei", Arial;
+    height: 30px;
+}
+
+.row select { /*设置外边距*/
+    margin: 2px 0 2px 0;
+}
+
+.form-group {
+    margin-bottom: 0px;
+!important;
+}
+
+.form_border {
+    border-left: 0;
+    line-height: 36px;
+    min-height: 36px;
+    text-align: center !important;
+}
+
+.form_title {
+    margin: 10px 0 0 0 !important;
+    background-color: #dddddd;
+    font-size: 14px;
+    font-weight: bold;
+    /*font-family: "Microsoft Yahei", Arial;*/
+    font-family:'PingFang SC','Microsoft YaHei','SimHei','Arial','SimSun';
+    height: 30px;
+}
+
+.formtitle_border {
+    margin: 7px 0 0 0;
+}
+
+/*评价模型设置模态框*/
+.modal-header1 {
+    padding: 5px 10px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.modal-footer {
+    padding: 5px 10px;
+    text-align: right;
+    border-top: 1px solid #e5e5e5;
+}
+
+/*.modal-header {
+
+    background-color: #1cb395;
+}
+
+.myModalLabel {
+    color: #ffffff;
+
+}*/
+
+.input-label {
+    padding-top: 0px;
+!important;
+}
+
+/******测试任务组相关样式*****/
+.testtargetbutton{
+    margin: 0 10px 10px 20px ;
+}
+#handle_button{
+    margin: 0 0 0 0 !important;
+    background-color: #dddddd;
+}
+
+.ui-button {
+    height: 30px;
+    font-size: 12px;
+    line-height: 30px;
+    text-align: center;
+    color: white;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    font-family: "Microsoft Yahei", 微软雅黑, Tahoma, Arial, Helvetica, STHeiti;
+    user-select: none;
+
+    zoom: 1;
+
+    cursor: pointer;
+    box-sizing: content-box;
+    border-width: initial;
+    border-style: none;
+    border-image: initial;
+    outline: none;
+    padding: 0px 12px;
+    overflow: hidden;
+    border-radius: 4px;
+    transition: width 0.3s;
+!important;
+}
+
+.scroll-table{
+    overflow: scroll;
+    position: relative;
+    z-index: 100;
+    top:-1px;
+    left:0;
+}
+
+.fixed-th-both{
+    z-index:200;
+    position:relative;
+}
+
+/*任务创建界面样式*/
+.module{
+    border-style: solid;
+    border-color:#8bb4e7;
+    border-width: 2px;
+    border-radius: 10px;
+    margin:2px
+
+}
+
+.wrapper-module{
+    padding:5px ;
+    margin:10px 0;
+
+}
+
+.wrapper-block{
+    padding:5px 20px;
+    min-height: 100px;
+    margin: 5px 0;
+}
+
+.left-up{
+    float:left;
+    width:49%;
+    margin:3px 0;
+    /*   border-style:solid;*/
+}
+
+
+.right{
+    float:right;
+    width:49%;
+    margin:3px 0;
+    /* border-style:solid;*/
+}
+
+.right-footer{
+    float:right;
+    margin:3px 0;
+    /* border-style:solid;*/
+}
+
+.task_border {
+    border-bottom: 1px solid #e1e5ec;
+    line-height: 30px;
+    min-height: 30px;
+}
+
+/*详情框*/
+.form-control-name {
+    display: block;
+    width: 120%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.index-font{
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/*权重设置*/
+.tools {
+    float:right;
+    display: inline-block;
+    padding: 0 8px;
+}
+.inputset {
+    line-height: 2px !important;
+    border:none;
+    /*outline: none;*/
+}
+/*input:active {
+    border-color:#3bb4f2;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 5px rgba(59,180,242,.3);
+}*/
+input:focus {
+    border-color:#3bb4f2;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 5px rgba(59,180,242,.3);
+}
+.service-font {
+    color: #676a6c;
+    font-weight: 700;
+}
+.wrapper_border{
+    line-height: 30px;
+    min-height: 30px;
+    padding: 0;
+    border-radius:10px;
+    border: 2px solid #1c84c6;
+}
+.superservice-input{
+    color: white;
+    background-color: #1c84c6;
+    border:none;
+    line-height: 1px!important;
+}
+.form-input {
+    width:100%;
+}
+
+/*临时建立的类，为方便提取筛选测试结果的所需条件*/
+.selectdata {}
+
+/*鼠标移入样式*/
+tr:hover{background:#E5E5E5 }
+
+
+
+
