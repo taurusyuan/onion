@@ -12,5 +12,12 @@
         <module name="renren-generator" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="renren-admin" target="1.8" />
+      <module name="renren-api" target="1.8" />
+      <module name="renren-common" target="1.8" />
+      <module name="renren-generator" target="1.8" />
+      <module name="renren-security" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

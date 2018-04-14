@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="renren-api:war">
+    <output-path>$PROJECT_DIR$/renren-api/target</output-path>
+    <root id="archive" name="renren-api.war">
+      <element id="artifact" artifact-name="renren-api:war exploded" />
+    </root>
+  </artifact>
+</component>
