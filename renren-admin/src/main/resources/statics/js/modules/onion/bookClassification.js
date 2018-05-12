@@ -9,9 +9,18 @@ var bookClassification = new Vue({
         headers: [
             {title: ''},
             {title: '<div class="checkbox"> <label> <input type="checkbox" id="checkAll"></label> </div>'},
-            {title: '<div style="width:67px">id</div>'},
-            {title: '<div style="width:67px">类型</div>'},
-            {title: '<div style="width:128px">操作</div>'}
+            {title: '<div style="display:none">id</div>'},
+            {title: '<div style="width:142px">书名</div>'},
+            {title: '<div style="width:142px">出版社</div>'},
+            {title: '<div style="width:112px">作者</div>'},
+            {title: '<div style="width:67px">译者</div>'},
+            {title: '<div style="width:67px">分类</div>'},
+            {title: '<div style="width:92px">上传人</div>'},
+            {title: '<div style="width:112px">修改人</div>'},
+            {title: '<div style="width:112px">责编</div>'},
+            {title: '<div style="width:112px">上架状态</div>'},
+            {title: '<div style="width:112px">上站时间</div>'},
+            {title: '<div style="width:52px">操作</div>'}
         ],
         rows: [],
         dtHandle: null,
@@ -89,30 +98,39 @@ var bookClassification = new Vue({
                     dataType: "json",
                     success: function (result) {
                         console.log(result);
-                        //封装返回数据
-                        let returnData = {};
-                        returnData.draw = data.draw;//这里直接自行返回了draw计数器,应该由后台返回
-                        returnData.recordsTotal = result.page.totalCount;//返回数据全部记录
-                        returnData.recordsFiltered = result.page.totalCount;//后台不实现过滤功能，每次查询均视作全部结果
-                        // returnData.data = result.page.list;//返回的数据列表
-                        // 重新整理返回数据以匹配表格
-                        let rows = [];
-                        var i = param.start+1;
-                        result.page.list.forEach(function (item) {
-                            let row = [];
-                            row.push(i++);
-                            row.push('<div class="checkbox"> <label> <input type="checkbox" name="selectFlag"></label> </div>');
-                            row.push('<div class="probe_id">'+item.id+'</div>');
-                            row.push(item.classificationName);
-                            row.push('<a class="fontcolor" onclick="delete_this(this)" id='+item.id+'>编辑</a>&nbsp'+
-                                '<a class="fontcolor" onclick="delete_this(this)" id='+item.id+'>删除</a>');
-                            rows.push(row);
-                        });
-                        returnData.data = rows;
-                        console.log(returnData);
-                        //调用DataTables提供的callback方法，代表数据已封装完成并传回DataTables进行渲染
-                        //此时的数据需确保正确无误，异常判断应在执行此回调前自行处理完毕
-                        callback(returnData);
+
+                            //封装返回数据
+                            let returnData = {};
+                            returnData.draw = data.draw;//这里直接自行返回了draw计数器,应该由后台返回
+                            returnData.recordsTotal = result.page.totalCount;//返回数据全部记录
+                            returnData.recordsFiltered = result.page.totalCount;//后台不实现过滤功能，每次查询均视作全部结果
+                            // returnData.data = result.page.list;//返回的数据列表
+                            // 重新整理返回数据以匹配表格
+                            let rows = [];
+                            var i = param.start+1;
+                            result.page.list.forEach(function (item) {
+                                let row = [];
+                                row.push(i++);
+                                row.push('<div class="checkbox"> <label> <input type="checkbox" name="selectFlag"></label> </div>');
+                                row.push('<div class="probe_id">'+item.id+'</div>');
+                                row.push(item.name);
+                                row.push(item.ip);
+                                row.push(item.bandwidth);
+                                row.push(item.cityMan);
+                                row.push(item.county);
+                                row.push(item.useruid);
+                                row.push(item.sysuuid);
+                                row.push(item.testgroupName);
+                                row.push(item.onlinestatus);
+                                row.push(item.onlineTime);
+                                row.push('<a class="fontcolor" onclick="delete_this(this)" id='+item.id+'>删除</a>');
+                                rows.push(row);
+                            });
+                            returnData.data = rows;
+                            console.log(returnData);
+                            //调用DataTables提供的callback方法，代表数据已封装完成并传回DataTables进行渲染
+                            //此时的数据需确保正确无误，异常判断应在执行此回调前自行处理完毕
+                            callback(returnData);
                     }
                 });
             }

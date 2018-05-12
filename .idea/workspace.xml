@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ArtifactsWorkspaceSettings">
-    <artifacts-to-build>
-      <artifact name="renren-api:war" />
-    </artifacts-to-build>
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="479e6e99-a7e1-4fee-bbf0-bb5952c26146" name="Default" comment="">
       <change afterPath="$PROJECT_DIR$/renren-admin/src/main/java/io/renren/common/utils/JSONUtils.java" afterDir="false" />
@@ -111,37 +106,48 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="renren_security@localhost" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="renren_security@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="renren_security@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="renren_security: schema" type="c314c289:MysqlImplModel$Schema" />
-      </path>
-    </expand>
+    <expand />
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d756690f-5c90-481f-8f42-1778a758dc1f/console.sql">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="menu.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="menu.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/renren-admin/src/main/resources/templates/modules/sys/menu.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
               <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bookClassification.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/renren-admin/src/main/resources/statics/js/modules/onion/bookClassification.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="212">
+              <caret line="132" column="49" selection-start-line="132" selection-start-column="49" selection-end-line="132" selection-end-column="49" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2991">
+              <caret line="1268" column="145" selection-start-line="1268" selection-start-column="145" selection-end-line="1268" selection-end-column="145" />
             </state>
           </provider>
         </entry>
@@ -257,13 +263,6 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="LogFilters">
-    <option name="FILTER_ERRORS" value="false" />
-    <option name="FILTER_WARNINGS" value="false" />
-    <option name="FILTER_INFO" value="true" />
-    <option name="FILTER_DEBUG" value="true" />
-    <option name="CUSTOM_FILTER" />
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
@@ -639,7 +638,6 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelOrder2" value="2" />
@@ -649,8 +647,6 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
-    <property name="last_opened_file_path" value="D:/CEM-master" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -682,7 +678,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.AdminApplication">
+  <component name="RunManager" selected="Spring Boot.ApiApplication">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -695,7 +691,7 @@
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="singleModule" />
@@ -731,7 +727,7 @@
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <option name="OUTPUT_DIRECTORY" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
@@ -742,82 +738,23 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration name="Unnamed" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.85" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="UPDATING_POLICY" value="restart-server" />
-      <deployment>
-        <artifact name="renren-api:war">
-          <settings>
-            <option name="CONTEXT_PATH" value="/" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_renren-security" />
-      </server-settings>
-      <predefined_log_file id="Tomcat" enabled="true" />
-      <predefined_log_file id="Tomcat Catalina" enabled="true" />
-      <predefined_log_file id="Tomcat Manager" enabled="false" />
-      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
-      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="2783" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method>
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="renren-api:war" />
-        </option>
-      </method>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <list>
       <item itemvalue="Spring Boot.ApiApplication" />
       <item itemvalue="Spring Boot.GeneratorApplication" />
       <item itemvalue="Spring Boot.AdminApplication" />
-      <item itemvalue="Tomcat Server.Unnamed" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -825,8 +762,8 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="479e6e99-a7e1-4fee-bbf0-bb5952c26146" name="Default" comment="" />
-      <created>1523022838709</created>
+      <changelist id="f8244be5-af11-41cb-b0ba-65ff1ce7bd75" name="Default" comment="" />
+      <created>1523625063157</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1523022838709</updated>
@@ -889,7 +826,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="248943000" />
+    <option name="totallyTimeSpent" value="248944000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -902,6 +839,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="15" side_tool="true" />
@@ -916,13 +854,13 @@
       <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3723404" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289256" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.024822695" />
+      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.024822695" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info id="Image Layers" order="3" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.3289256" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Version Control" order="13" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4574468" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.17198582" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.3280142" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3289256" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.78723407" visible="true" weight="0.27647534" />
@@ -930,13 +868,40 @@
       <window_info id="Web" order="6" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4574468" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5004042" side_tool="true" weight="0.32978722" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.78723407" visible="true" weight="0.27647534" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.3289256" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Application Servers" order="8" weight="0.3280142" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="9" weight="0.32983023" />
+      <window_info id="Web" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Spring" order="7" weight="0.3280142" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info id="Image Layers" order="3" />
+      <window_info anchor="right" id="Bean Validation" order="8" weight="0.32983023" />
+      <window_info id="Structure" order="1" sideWeight="0.21276596" side_tool="true" weight="0.21180275" />
+      <window_info anchor="right" id="Database" order="5" visible="true" weight="0.17704123" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="13" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.10460993" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.320922" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3723404" />
+      <window_info anchor="bottom" id="Messages" order="7" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info id="Designer" order="2" />
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="Application Servers" order="8" weight="0.3280142" />
@@ -1001,6 +966,13 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2991">
+          <caret line="1268" column="145" selection-start-line="1268" selection-start-column="145" selection-end-line="1268" selection-end-column="145" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/renren-admin/src/main/java/io/renren/modules/onion/entity/CommentsEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
@@ -1036,55 +1008,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/comments.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/reading_notes">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/feedback_type">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/feedback_type.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/feedback.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/comments">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/feedback">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/comments.sql" />
+    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/reading_notes" />
+    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/feedback_type" />
+    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/feedback_type.sql" />
+    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/feedback.sql" />
+    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/comments" />
+    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/feedback" />
     <entry file="file://$PROJECT_DIR$/renren-admin/src/main/resources/templates/header.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -1106,13 +1036,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/book_classification.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/book_classification.sql" />
     <entry file="file://$PROJECT_DIR$/renren-admin/src/main/java/io/renren/modules/onion/entity/BookEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="369">
@@ -1120,20 +1044,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/book_classification">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/comment_reply">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/book_classification" />
+    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/comment_reply" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.3.2/shiro-core-1.3.2.jar!/org/apache/shiro/subject/support/DelegatingSubject.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="61">
@@ -1211,142 +1123,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/book.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/qrtz_blob_triggers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/qrtz_calendars">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/schedule_job">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/schedule_job_log">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/sys_config">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/sys_dept">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/sys_dict">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/sys_log">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/sys_oss">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/sys_role">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/sys_role_dept">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/sys_role_menu">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/sys_user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/sys_user_role">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/words_ban">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/sys_menu.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/book">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/sys_menu">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d756690f-5c90-481f-8f42-1778a758dc1f/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/book.sql" />
+    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/qrtz_blob_triggers" />
+    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/qrtz_calendars" />
+    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/schedule_job" />
+    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/schedule_job_log" />
+    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/sys_config" />
+    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/sys_dept" />
+    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/sys_dict" />
+    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/sys_log" />
+    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/sys_oss" />
+    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/sys_role" />
+    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/sys_role_dept" />
+    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/sys_role_menu" />
+    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/sys_user" />
+    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/sys_user_role" />
+    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/words_ban" />
+    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/sys_menu.sql" />
+    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/book" />
+    <entry file="das://d756690f-5c90-481f-8f42-1778a758dc1f/schema/renren_security/table/sys_menu" />
     <entry file="file://$PROJECT_DIR$/renren-admin/src/main/resources/templates/modules/sys/menu.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1357,32 +1152,6 @@
   </component>
   <component name="masterDetails">
     <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <last-edited>renren-api:war</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.5" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>Spring</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
           <splitter-proportions>
@@ -1406,18 +1175,6 @@
           </splitter-proportions>
         </settings>
       </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>renren-security</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
@@ -1432,7 +1189,6 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: ch.qos.logback:logback-classic:1.1.11</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
