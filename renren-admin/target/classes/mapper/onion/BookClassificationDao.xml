@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.onion.dao.BookClassificationDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.renren.modules.onion.entity.BookClassificationEntity" id="bookClassificationMap">
+        <result property="id" column="id"/>
+        <result property="classificationName" column="classification_name"/>
+    </resultMap>
+
+	<select id="queryObject" resultType="io.renren.modules.onion.entity.BookClassificationEntity">
+		select * from book_classification where id = #{value}
+	</select>
+
+	<select id="queryList" resultType="io.renren.modules.onion.entity.BookClassificationEntity">
+		select * from book_classification
+        <choose>
+            <when test="sidx != null and sidx.trim() != ''">
+                order by ${sidx} ${order}
+            </when>
+			<otherwise>
+                order by id desc
+			</otherwise>
+        </choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+	
+ 	<select id="queryTotal" resultType="int">
+		select count(*) from book_classification 
+	</select>
+	 
+	<insert id="save" parameterType="io.renren.modules.onion.entity.BookClassificationEntity" useGeneratedKeys="true" keyProperty="id">
+		insert into book_classification
+		(
+			`classification_name`
+		)
+		values
+		(
+			#{classificationName}
+		)
+	</insert>
+	 
+	<update id="update" parameterType="io.renren.modules.onion.entity.BookClassificationEntity">
+		update book_classification 
+		<set>
+			<if test="classificationName != null">`classification_name` = #{classificationName}</if>
+		</set>
+		where id = #{id}
+	</update>
+	
+	<delete id="delete">
+		delete from book_classification where id = #{value}
+	</delete>
+	
+	<delete id="deleteBatch">
+		delete from book_classification where id in 
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+</mapper>

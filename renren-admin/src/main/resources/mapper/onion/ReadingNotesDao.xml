@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.onion.dao.ReadingNotesDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.renren.modules.onion.entity.ReadingNotesEntity" id="readingNotesMap">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="content" column="content"/>
+        <result property="postPeople" column="post_people"/>
+        <result property="approvalState" column="approval_state"/>
+        <result property="createTime" column="create_time"/>
+    </resultMap>
+
+	<select id="queryObject" resultType="io.renren.modules.onion.entity.ReadingNotesEntity">
+		select * from reading_notes where id = #{value}
+	</select>
+
+	<select id="queryList" resultType="io.renren.modules.onion.entity.ReadingNotesEntity">
+		select * from reading_notes
+
+		where reading_notes.id IS NOT NULL
+		<if test="name != null and name != ''">
+			AND reading_notes.name LIKE concat('%',#{name},'%')
+		</if>
+		<if test="content != null and content != ''">
+			AND reading_notes.content LIKE concat('%',#{content},'%')
+		</if>
+		<if test="post_people != null and post_people != ''">
+			AND reading_notes.post_people LIKE concat('%',#{post_people},'%')
+		</if>
+		<if test="create_time != null and create_time != ''">
+		AND reading_notes.create_time LIKE concat('%',#{create_time},'%')
+		</if>
+		<if test="approval_state != null and approval_state != ''">
+			AND reading_notes.approval_state = #{approval_state}
+		</if>
+
+        <choose>
+            <when test="sidx != null and sidx.trim() != ''">
+                order by ${sidx} ${order}
+            </when>
+			<otherwise>
+                order by id desc
+			</otherwise>
+        </choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+	
+ 	<select id="queryTotal" resultType="int">
+		select count(*) from reading_notes 
+	</select>
+	 
+	<insert id="save" parameterType="io.renren.modules.onion.entity.ReadingNotesEntity" useGeneratedKeys="true" keyProperty="id">
+		insert into reading_notes
+		(
+			`name`, 
+			`content`, 
+			`post_people`, 
+			`approval_state`, 
+			`create_time`
+		)
+		values
+		(
+			#{name}, 
+			#{content}, 
+			#{postPeople}, 
+			#{approvalState}, 
+			#{createTime}
+		)
+	</insert>
+	 
+	<update id="update" parameterType="io.renren.modules.onion.entity.ReadingNotesEntity">
+		update reading_notes 
+		<set>
+			<if test="name != null">`name` = #{name}, </if>
+			<if test="content != null">`content` = #{content}, </if>
+			<if test="postPeople != null">`post_people` = #{postPeople}, </if>
+			<if test="approvalState != null">`approval_state` = #{approvalState}, </if>
+			<if test="createTime != null">`create_time` = #{createTime}</if>
+		</set>
+		where id = #{id}
+	</update>
+	
+	<delete id="delete">
+		delete from reading_notes where id = #{value}
+	</delete>
+	
+	<delete id="deleteBatch">
+		delete from reading_notes where id in 
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+</mapper>

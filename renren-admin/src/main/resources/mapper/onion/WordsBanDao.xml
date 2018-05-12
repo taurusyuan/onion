@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.onion.dao.WordsBanDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.renren.modules.onion.entity.WordsBanEntity" id="wordsBanMap">
+        <result property="id" column="id"/>
+        <result property="word" column="word"/>
+        <result property="postPeople" column="post_people"/>
+        <result property="approvalState" column="approval_state"/>
+        <result property="createTime" column="create_time"/>
+    </resultMap>
+
+	<select id="queryObject" resultType="io.renren.modules.onion.entity.WordsBanEntity">
+		select * from words_ban where id = #{value}
+	</select>
+
+	<select id="queryList" resultType="io.renren.modules.onion.entity.WordsBanEntity">
+		select * from words_ban
+		where words_ban.id IS NOT NULL
+		<if test="word != null and word != ''">
+			AND words_ban.word LIKE concat('%',#{word},'%')
+		</if>
+		<if test="post_people != null and post_people != ''">
+			AND words_ban.post_people LIKE concat('%',#{post_people},'%')
+		</if>
+		<if test="create_time != null and create_time != ''">
+			AND words_ban.create_time LIKE concat('%',#{create_time},'%')
+		</if>
+		<if test="approval_state != null and approval_state != ''">
+			AND words_ban.approval_state = #{approval_state}
+		</if>
+        <choose>
+            <when test="sidx != null and sidx.trim() != ''">
+                order by ${sidx} ${order}
+            </when>
+			<otherwise>
+                order by id desc
+			</otherwise>
+        </choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+	
+ 	<select id="queryTotal" resultType="int">
+		select count(*) from words_ban 
+	</select>
+	 
+	<insert id="save" parameterType="io.renren.modules.onion.entity.WordsBanEntity" useGeneratedKeys="true" keyProperty="id">
+		insert into words_ban
+		(
+			`word`, 
+			`post_people`, 
+			`approval_state`, 
+			`create_time`
+		)
+		values
+		(
+			#{word}, 
+			#{postPeople}, 
+			#{approvalState}, 
+			#{createTime}
+		)
+	</insert>
+	 
+	<update id="update" parameterType="io.renren.modules.onion.entity.WordsBanEntity">
+		update words_ban 
+		<set>
+			<if test="word != null">`word` = #{word}, </if>
+			<if test="postPeople != null">`post_people` = #{postPeople}, </if>
+			<if test="approvalState != null">`approval_state` = #{approvalState}, </if>
+			<if test="createTime != null">`create_time` = #{createTime}</if>
+		</set>
+		where id = #{id}
+	</update>
+	
+	<delete id="delete">
+		delete from words_ban where id = #{value}
+	</delete>
+	
+	<delete id="deleteBatch">
+		delete from words_ban where id in 
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+</mapper>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.onion.dao.BookDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.renren.modules.onion.entity.BookEntity" id="bookMap">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="publisher" column="publisher"/>
+        <result property="writer" column="writer"/>
+        <result property="translator" column="translator"/>
+        <result property="classification" column="classification"/>
+        <result property="uploadPeople" column="upload_people"/>
+        <result property="updatePeople" column="update_people"/>
+        <result property="editor" column="editor"/>
+        <result property="listOn" column="list_on"/>
+        <result property="createTime" column="create_time"/>
+		<result property="classificationName" column="classification_name"/>
+    </resultMap>
+
+	<select id="queryObject" resultType="io.renren.modules.onion.entity.BookEntity">
+		select * from book where id = #{value}
+	</select>
+
+	<select id="queryList" resultType="io.renren.modules.onion.entity.BookEntity">
+		select book.* ,
+		book_classification.classification_name AS classification_name
+		from book
+		INNER JOIN book_classification
+		ON book.classification=book_classification.id
+		where book.id IS NOT NULL
+		<if test="name != null and name != ''">
+		AND book.name LIKE concat('%',#{name},'%')
+	    </if>
+		<if test="writer != null and writer != ''">
+			AND book.writer LIKE concat('%',#{writer},'%')
+		</if>
+		<if test="classification != null and classification != ''">
+		AND book.classification = #{classification}
+	    </if>
+		<if test="list_on != null and list_on != ''">
+			AND book.list_on = #{list_on}
+		</if>
+
+        <choose>
+            <when test="sidx != null and sidx.trim() != ''">
+                order by ${sidx} ${order}
+            </when>
+			<otherwise>
+                order by id desc
+			</otherwise>
+        </choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+	
+ 	<select id="queryTotal" resultType="int">
+		select count(*) from book
+		where book.id IS NOT NULL
+		<if test="name != null and name != ''">
+			AND book.name LIKE concat('%',#{name},'%')
+		</if>
+		<if test="writer != null and writer != ''">
+			AND book.writer LIKE concat('%',#{writer},'%')
+		</if>
+		<if test="classification != null and classification != ''">
+			AND book.classification = #{classification}
+		</if>
+		<if test="list_on != null and list_on != ''">
+			AND book.list_on = #{list_on}
+		</if>
+	</select>
+	 
+	<insert id="save" parameterType="io.renren.modules.onion.entity.BookEntity" useGeneratedKeys="true" keyProperty="id">
+		insert into book
+		(
+			`name`, 
+			`publisher`, 
+			`writer`, 
+			`translator`, 
+			`classification`, 
+			`upload_people`, 
+			`update_people`, 
+			`editor`, 
+			`list_on`, 
+			`create_time`
+		)
+		values
+		(
+			#{name}, 
+			#{publisher}, 
+			#{writer}, 
+			#{translator}, 
+			#{classification}, 
+			#{uploadPeople}, 
+			#{updatePeople}, 
+			#{editor}, 
+			#{listOn}, 
+			#{createTime}
+		)
+	</insert>
+	 
+	<update id="update" parameterType="io.renren.modules.onion.entity.BookEntity">
+		update book 
+		<set>
+			<if test="name != null">`name` = #{name}, </if>
+			<if test="publisher != null">`publisher` = #{publisher}, </if>
+			<if test="writer != null">`writer` = #{writer}, </if>
+			<if test="translator != null">`translator` = #{translator}, </if>
+			<if test="classification != null">`classification` = #{classification}, </if>
+			<if test="uploadPeople != null">`upload_people` = #{uploadPeople}, </if>
+			<if test="updatePeople != null">`update_people` = #{updatePeople}, </if>
+			<if test="editor != null">`editor` = #{editor}, </if>
+			<if test="listOn != null">`list_on` = #{listOn}, </if>
+			<if test="createTime != null">`create_time` = #{createTime}</if>
+		</set>
+		where id = #{id}
+	</update>
+	
+	<delete id="delete">
+		delete from book where id = #{value}
+	</delete>
+	
+	<delete id="deleteBatch">
+		delete from book where id in 
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+</mapper>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.onion.dao.CommentsDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.renren.modules.onion.entity.CommentsEntity" id="commentsMap">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="commentContent" column="comment_content"/>
+        <result property="commentPeople" column="comment_people"/>
+        <result property="approvalState" column="approval_state"/>
+        <result property="createTime" column="create_time"/>
+    </resultMap>
+
+	<select id="queryObject" resultType="io.renren.modules.onion.entity.CommentsEntity">
+		select * from comments where id = #{value}
+	</select>
+
+	<select id="queryList" resultType="io.renren.modules.onion.entity.CommentsEntity">
+		select * from comments
+		where comments.id IS NOT NULL
+		<if test="name != null and name != ''">
+			AND comments.name LIKE concat('%',#{name},'%')
+		</if>
+		<if test="comment_content != null and comment_content != ''">
+			AND comments.comment_content LIKE concat('%',#{comment_content},'%')
+		</if>
+		<if test="comment_people != null and comment_people != ''">
+			AND comments.comment_people LIKE concat('%',#{comment_people},'%')
+		</if>
+		<if test="create_time != null and create_time != ''">
+			AND comments.create_time LIKE concat('%',#{create_time},'%')
+		</if>
+		<if test="approval_state != null and approval_state != ''">
+			AND comments.approval_state = #{approval_state}
+		</if>
+
+        <choose>
+            <when test="sidx != null and sidx.trim() != ''">
+                order by ${sidx} ${order}
+            </when>
+			<otherwise>
+                order by id desc
+			</otherwise>
+        </choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+	
+ 	<select id="queryTotal" resultType="int">
+		select count(*) from comments 
+	</select>
+	 
+	<insert id="save" parameterType="io.renren.modules.onion.entity.CommentsEntity" useGeneratedKeys="true" keyProperty="id">
+		insert into comments
+		(
+			`name`, 
+			`comment_content`, 
+			`comment_people`, 
+			`approval_state`, 
+			`create_time`
+		)
+		values
+		(
+			#{name}, 
+			#{commentContent}, 
+			#{commentPeople}, 
+			#{approvalState}, 
+			#{createTime}
+		)
+	</insert>
+	 
+	<update id="update" parameterType="io.renren.modules.onion.entity.CommentsEntity">
+		update comments 
+		<set>
+			<if test="name != null">`name` = #{name}, </if>
+			<if test="commentContent != null">`comment_content` = #{commentContent}, </if>
+			<if test="commentPeople != null">`comment_people` = #{commentPeople}, </if>
+			<if test="approvalState != null">`approval_state` = #{approvalState}, </if>
+			<if test="createTime != null">`create_time` = #{createTime}</if>
+		</set>
+		where id = #{id}
+	</update>
+	
+	<delete id="delete">
+		delete from comments where id = #{value}
+	</delete>
+	
+	<delete id="deleteBatch">
+		delete from comments where id in 
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+</mapper>

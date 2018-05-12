@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.onion.dao.CommentReplyDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.renren.modules.onion.entity.CommentReplyEntity" id="commentReplyMap">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="commentContent" column="comment_content"/>
+        <result property="commentPeople" column="comment_people"/>
+        <result property="replyContent" column="reply_content"/>
+        <result property="replyPeople" column="reply_people"/>
+        <result property="approvalState" column="approval_state"/>
+        <result property="createTime" column="create_time"/>
+    </resultMap>
+
+	<select id="queryObject" resultType="io.renren.modules.onion.entity.CommentReplyEntity">
+		select * from comment_reply where id = #{value}
+	</select>
+
+	<select id="queryList" resultType="io.renren.modules.onion.entity.CommentReplyEntity">
+		select * from comment_reply
+		<if test="name != null and name != ''">
+			AND comment_reply.name LIKE concat('%',#{name},'%')
+		</if>
+		<if test="comment_content != null and comment_content != ''">
+			AND comment_reply.comment_content LIKE concat('%',#{comment_content},'%')
+		</if>
+		<if test="comment_people != null and comment_people != ''">
+			AND comment_reply.comment_people LIKE concat('%',#{comment_people},'%')
+		</if>
+		<if test="reply_content != null and reply_content != ''">
+			AND comment_reply.reply_content LIKE concat('%',#{reply_content},'%')
+		</if>
+		<if test="post_people != null and post_people != ''">
+			AND comment_reply.reply_people LIKE concat('%',#{reply_people},'%')
+		</if>
+		<if test="create_time != null and create_time != ''">
+			AND comment_reply.create_time LIKE concat('%',#{create_time},'%')
+		</if>
+		<if test="approval_state != null and approval_state != ''">
+			AND comment_reply.approval_state = #{approval_state}
+		</if>
+
+        <choose>
+            <when test="sidx != null and sidx.trim() != ''">
+                order by ${sidx} ${order}
+            </when>
+			<otherwise>
+                order by id desc
+			</otherwise>
+        </choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+	
+ 	<select id="queryTotal" resultType="int">
+		select count(*) from comment_reply 
+	</select>
+	 
+	<insert id="save" parameterType="io.renren.modules.onion.entity.CommentReplyEntity" useGeneratedKeys="true" keyProperty="id">
+		insert into comment_reply
+		(
+			`name`, 
+			`comment_content`, 
+			`comment_people`, 
+			`reply_content`, 
+			`reply_people`, 
+			`approval_state`, 
+			`create_time`
+		)
+		values
+		(
+			#{name}, 
+			#{commentContent}, 
+			#{commentPeople}, 
+			#{replyContent}, 
+			#{replyPeople}, 
+			#{approvalState}, 
+			#{createTime}
+		)
+	</insert>
+	 
+	<update id="update" parameterType="io.renren.modules.onion.entity.CommentReplyEntity">
+		update comment_reply 
+		<set>
+			<if test="name != null">`name` = #{name}, </if>
+			<if test="commentContent != null">`comment_content` = #{commentContent}, </if>
+			<if test="commentPeople != null">`comment_people` = #{commentPeople}, </if>
+			<if test="replyContent != null">`reply_content` = #{replyContent}, </if>
+			<if test="replyPeople != null">`reply_people` = #{replyPeople}, </if>
+			<if test="approvalState != null">`approval_state` = #{approvalState}, </if>
+			<if test="createTime != null">`create_time` = #{createTime}</if>
+		</set>
+		where id = #{id}
+	</update>
+	
+	<delete id="delete">
+		delete from comment_reply where id = #{value}
+	</delete>
+	
+	<delete id="deleteBatch">
+		delete from comment_reply where id in 
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+</mapper>
