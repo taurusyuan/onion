@@ -2,7 +2,12 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="renren_security@localhost" uuid="eee65645-ec80-4844-8ddd-c58b8b815b16">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <database-info product="MySQL" version="5.5.5-10.1.31-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.46 ( Revision: 9cc87a48e75c2d2e87c1a293b2862ce651cb256e )">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
+      <user-name>root</user-name>
       <introspection-schemas>*:renren_security</introspection-schemas>
     </data-source>
   </component>

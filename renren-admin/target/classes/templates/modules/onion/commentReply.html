@@ -60,14 +60,9 @@
                                     <option value="1">已审核通过</option>
                                     <option value="2">审核未通过</option>
                                     <option value="3">未审核</option>
-                                    <option value="1,2,3">全部</option>
-
-
                                 </select>
                             </div>
-
                         </form>
-
                     </div>
                 </div>
             </div>
@@ -77,19 +72,9 @@
         <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title fontcolor" id="handle" style="padding-bottom: 0px !important;">
-                    <button type="button" class="btn btn-primary " v-on:click="testagentadd"><span
-                            class="glyphicon glyphicon-plus"></span>录入
-                    </button>
-                    <button type="button" class="btn btn-primary " v-on:click="testagentdelBatch"><span
-                            class="glyphicon glyphicon-trash"></span>批量删除
-                    </button>
-                    <!--<button id="excel_import" type="button" class="btn btn-primary "><span-->
-                    <!--class="glyphicon glyphicon-save"></span>Excel数据导入-->
-                    <!--</button>-->
                     <button type="button" class="btn btn-primary" ><a href="../../commentreply/download" style="color:white"><span
                             class="glyphicon glyphicon-open"></span>Excel导出</a>
                     </button>
-
                     <div class="btn-group pull-right">
                         <button type="button" class="btn btn-primary" style="margin-right: 5px"
                                 v-on:click="testagentListsearch"><span
@@ -108,121 +93,108 @@
             </div>
         </div>
     </div>
-    <!-- 模态框（Modal） -->
+    <!-- 详情编辑模态框（Modal） -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog" style="width: 768px"> <!--修改bootstrap modal模态框的宽度-->
+        <div class="modal-dialog" style="width: 1100px"> <!--修改bootstrap modal模态框的宽度-->
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel">{{modaltitle}}</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        编辑
+                    </h4>
                 </div>
                 <div class="row" id="probeform_title">
-                    <div class="col-lg-3 col-md-2 col-sm-3">
-                        <h4 class="fontcolor probeformtitle_border">表单信息管理</h4>
+                    <div class="col-lg-3 col-md-3 col-sm-3">
+                        <h4 class="fontcolor probeformtitle_border">
+                            评论回复相关信息
+                        </h4>
                     </div>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" style="padding: 0px 30px 0px 30px !important;height: 400px;overflow: auto">
                     <div class="row">
                         <form class="form-horizontal" id="probeform_data" role="form">
+
                             <div class="form-group row">
                                 <label for="id"
-                                       class="col-lg-3 col-md-3 col-sm-3 control-label form_border" style="display: none">id:</label>
-                                <div class="col-lg-3 col-md-3 col-sm-3 form_border" style="display: none">
-                                    <input type="text" class="form-control" id="id" name="id"
+                                       class="col-lg-2 col-md-2 col-sm-2 input-label form_border"
+                                       style="display: none">id</label>
+                                <div class="col-lg-2 col-md-2 col-sm-2" style="display: none">
+                                    <input type="text" class="form-control input clear" id="id" name="id"
                                            placeholder="请输入id">
                                 </div>
+                            </div>
+
+                            <div class="form-group row">
                                 <label for="name"
-                                       class="col-lg-3 col-md-3 col-sm-3 control-label form_border">测试机名:</label>
-                                <div class="col-lg-3 col-md-3 col-sm-3 form_border">
+                                       class="col-lg-2 col-md-2 col-sm-2 control-label form_border" >书名:</label>
+                                <div class="col-lg-2 col-md-2 col-sm-2 form_border" >
                                     <input type="text" class="form-control" id="name" name="name"
-                                           placeholder="请输入测试机名">
+                                           placeholder="请输入书名">
                                 </div>
-                                <label for="ip"
-                                       class="col-lg-3 col-md-3 col-sm-3 control-label form_border">IP地址:</label>
-                                <div class="col-lg-3 col-md-3 col-sm-3 form_border">
-                                    <input type="text" class="form-control" id="ip" name="ip"
-                                           placeholder="请输入IP地址">
+                                <label for="comment_content"
+                                       class="col-lg-2 col-md-2 col-sm-2 control-label form_border">原评论:</label>
+                                <div class="col-lg-2 col-md-2 col-sm-2 form_border">
+                                    <input type="text" class="form-control" id="comment_content" name="commentContent"
+                                           placeholder="请输入原评论">
                                 </div>
                             </div>
+
                             <div class="form-group row">
-                                <label for="bandwidth"
-                                       class="col-lg-3 col-md-3 col-sm-3 control-label form_border">带宽:</label>
-                                <div class="col-lg-3 col-md-3 col-sm-3 form_border">
-                                    <input type="text" class="form-control" id="bandwidth" name="bandwidth"
-                                           placeholder="请输入带宽">
+                                <label for="comment_people"
+                                       class="col-lg-2 col-md-2 col-sm-2 control-label form_border">评论者</label>
+                                <div class="col-lg-2 col-md-2 col-sm-2 form_border">
+                                    <input type="text" class="form-control" id="comment_people" name="commentPeople"
+                                           placeholder="请输入评论者">
                                 </div>
-                                <label for="cityMan"
-                                       class="col-lg-3 col-md-3 col-sm-3 control-label form_border">地市:</label>
-                                <div class="col-lg-3 col-md-3 col-sm-3 form_border">
-                                    <select id="cityMan" class="form-control" name="cityMan">  <!--VUE列表渲染-->
-                                        <option v-for="item in city_mans">
-                                            {{ item.message }}
-                                        </option>
+                                <label for="reply_content"
+                                       class="col-lg-2 col-md-2 col-sm-2 control-label form_border">回复:</label>
+                                <div class="col-lg-2 col-md-2 col-sm-2 form_border">
+                                    <input type="text" class="form-control" id="reply_content" name="replyContent"
+                                           placeholder="请输入回复">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="reply_people"
+                                       class="col-lg-2 col-md-2 col-sm-2 control-label form_border">回复者</label>
+                                <div class="col-lg-2 col-md-2 col-sm-2 form_border">
+                                    <input type="text" class="form-control" id="reply_people" name="replyPeople"
+                                           placeholder="请输入回复者">
+                                </div>
+                                <label for="approval_state"
+                                       class="col-lg-2 col-md-2 col-sm-2 control-label form_border">审核状态:</label>
+                                <div class="col-lg-2 col-md-2 col-sm-2 form_border">
+                                    <select id="approval_state" class="form-control" name="approvalState">  <!--VUE列表渲染-->
+                                        <option value="">---请选择---</option>
+                                        <option value="1">已审核通过</option>
+                                        <option value="2">审核未通过</option>
+                                        <option value="3">未审核</option>
                                     </select>
                                 </div>
                             </div>
+
                             <div class="form-group row">
-                                <label for="county"
-                                       class="col-lg-3 col-md-3 col-sm-3 control-label form_border">区县:</label>
-                                <div class="col-lg-3 col-md-3 col-sm-3 form_border">
-                                    <select id="county" class="form-control" name="county">  <!--VUE列表渲染-->
-                                        <option v-for="item in countys">
-                                            {{ item.message }}
-                                        </option>
-                                    </select>
-                                </div>
-                                <label for="testgroupName"
-                                       class="col-lg-3 col-md-3 col-sm-3 control-label form_border">测试任务组:</label>
-                                <div class="col-lg-3 col-md-3 col-sm-3 form_border">
-                                    <select id="testgroupName" class="form-control" name="testgroupName">
-                                        <option v-for="item in testgroup_names">
-                                            {{ item.message.name }}
-                                        </option>
-                                    </select>
+                                <label for="create_time"
+                                       class="col-lg-2 col-md-2 col-sm-2 control-label form_border">创建时间:</label>
+                                <div class="col-lg-2 col-md-2 col-sm-2 form_border">
+                                    <input type="text" class="form-control" id="create_time" name="createTime"
+                                           readonly="readonly" unselectable='on'>
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="runInterval" class="col-lg-3 col-md-3 col-sm-3 control-label form_border">任务间隔:</label>
-                                <div class="col-lg-3 col-md-3 col-sm-3 form_border">
-                                    <input type="text" class="form-control" id="runInterval" name="runInterval"
-                                           placeholder="请输入任务间隔">
-                                </div>
-                                <label for="address"
-                                       class="col-lg-3 col-md-3 col-sm-3 control-label form_border">装机地址:</label>
-                                <div class="col-lg-3 col-md-3 col-sm-3 form_border">
-                                    <input type="text" class="form-control" id="address" name="address"
-                                           placeholder="请输入装机地址">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="brasname" class="col-lg-3 col-md-3 col-sm-3 control-label form_border">BRAS名称:</label>
-                                <div class="col-lg-3 col-md-3 col-sm-3 form_border">
-                                    <input type="text" class="form-control" id="brasname" name="brasname"
-                                           placeholder="请输入BRAS名称">
-                                </div>
-                                <label for="brasip" class="col-lg-3 col-md-3 col-sm-3 control-label form_border">BRAS_IP:</label>
-                                <div class="col-lg-3 col-md-3 col-sm-3 form_border">
-                                    <input type="text" class="form-control" id="brasip" name="brasip"
-                                           placeholder="请输入BRAS_IP">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="brasport" class="col-lg-3 col-md-3 col-sm-3 control-label form_border">BRAS端口:</label>
-                                <div class="col-lg-3 col-md-3 col-sm-3 form_border">
-                                    <input type="text" class="form-control" id="brasport" name="brasport"
-                                           placeholder="请输入BRAS名称">
-                                </div>
-                            </div>
+
                         </form>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                    <button type="button" class="btn btn-primary" v-on:click="submit">确定</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" v-on:click="submit">保存</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal -->
     </div>
+
     <!-- 删除确认模态框（Modal） -->
     <div class="modal fade" id="myModal_delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
          aria-hidden="true">
@@ -232,8 +204,8 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                         &times;
                     </button>
-                    <h4 class="modal-title" id="myModalLabel_delet">
-                        确认
+                    <h4 class="modal-title" id="myModalLabel_delete">
+                        提示
                     </h4>
                 </div>
                 <div class="modal-body">

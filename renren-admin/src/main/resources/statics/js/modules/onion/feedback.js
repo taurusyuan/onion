@@ -6,6 +6,7 @@ var st =new Map();
 st.set(1,"已处理");
 st.set(2,"未处理");
 
+//查询功能
 var feedback_handler = new Vue({
     el:'#handle',
     data:{},
@@ -47,6 +48,180 @@ function getFormJson(form) {      /*将表单对象变为json对象*/
     });
     return o;
 }
+
+//删除功能
+var delete_data = new Vue({
+    el: '#myModal_delete',
+    data: {
+        id: null
+    },
+    methods: {
+        show_deleteModal: function () {
+            $(this.$el).modal('show');
+            /*弹出确认模态框*/
+        },
+        close_modal: function (obj) {
+            $(this.$el).modal('hide');
+        },
+        cancel_delete: function () {
+
+        },
+        delete_data: function () {
+            idArray = [];
+            /*清空id数组*/
+            idArray[0] = this.id;
+            delete_ajax();
+            /*ajax传输*/
+
+        }
+    }
+});
+
+function delete_ajax() {
+    var ids = JSON.stringify(idArray);
+    /*对象数组字符串*/
+    $.ajax({
+        type: "POST", /*GET会乱码*/
+        url: "../../feedback/delete",
+        cache: false,  //禁用缓存
+        data: ids,  //传入组装的参数
+        dataType: "json",
+        contentType: "application/json", /*必须要,不可少*/
+        success: function (result) {
+
+            toastr.success("意见反馈信息删除成功!");
+
+            feedback.currReset();
+
+            idArray = [];
+            /*清空id数组*/
+            delete_data.close_modal();
+            /*关闭模态框*/
+        }
+    });
+}
+
+function delete_this(obj) {
+    delete_data.show_deleteModal();
+    delete_data.id = parseInt(obj.id);
+    /*获取当前行探针数据id*/
+    console.log(delete_data.id);
+}
+
+//编辑功能
+var edit_data = new Vue({
+    el: '#myModal',
+    data: {
+        id: null
+    },
+    methods: {
+        show_editModal: function () {
+            $(this.$el).modal('show');
+            /*弹出编辑模态框*/
+        },
+        close_modal: function (obj) {
+            $(this.$el).modal('hide');
+
+        },
+        cancel_edit: function () {
+
+        },
+        submit: function () {
+            var probeJson = getFormJson($('#probeform_data'));
+            status = 1;
+            if (typeof(probeJson["userName"]) == "undefined") {
+                toastr.warning("请录入用户名!");
+            } else {
+                var probe = JSON.stringify(probeJson);
+                console.log(probe);
+                var mapstr;
+                if (status == 0) {
+                    mapstr = "save";
+                } else if (status == 1) {
+                    mapstr = "update"
+                }
+                $.ajax({
+                    type: "POST", /*GET会乱码*/
+                    url: "../../feedback/" + mapstr,
+                    cache: false,  //禁用缓存
+                    data: probe,  //传入组装的参数
+                    dataType: "json",
+                    contentType: "application/json", /*必须要,不可少*/
+                    success: function (result) {
+                        let code = result.code;
+                        let msg = result.msg;
+                        console.log(result);
+                        if (status == 0) {
+                            switch (code) {
+                                case 0:
+                                    toastr.success("意见反馈信息录入成功!");
+                                    $('#myModal_update').modal('hide');
+                                    break;
+                                case 300:
+                                    toastr.error(msg);
+                                    break;
+                                case 403:
+                                    toastr.error(msg);
+                                    break;
+                                default:
+                                    toastr.error("未知错误");
+                                    break
+                            }
+                        } else if (status == 1) {
+                            switch (code) {
+                                case 0:
+                                    toastr.success("意见反馈信息更新成功!");
+                                    $('#myModal_update').modal('hide');
+                                    break;
+                                case 300:
+                                    toastr.error(msg);
+                                    break;
+                                case 403:
+                                    toastr.error(msg);
+                                    break;
+                                default:
+                                    toastr.error("未知错误");
+                                    break
+                            }
+                        }
+                        edit_data.close_modal();
+                        feedback.currReset();
+                    }
+                });
+            }
+        },
+        edit_data: function () {
+            idArray = [];
+            /*编辑id数组*/
+            idArray[0] = this.id;
+
+        }
+    }
+});
+
+function edit_this(obj){
+    edit_data.show_editModal();
+    var edit_id = parseInt(obj.id);
+    var forms = $('#probeform_data    .form-control');
+    $.ajax({
+        url: "../../feedback/info/" + edit_id,
+        type: "POST",
+        cache: false,  //禁用缓存
+        dataType: "json",
+        contentType: "application/json",
+        success: function (result) {
+            console.log(result);
+            forms[0].value=result.feedback.id;
+            forms[1].value=result.feedback.userName;
+            forms[2].value=result.feedback.type;
+            forms[3].value=result.feedback.feedback;
+            forms[4].value=result.feedback.treatmentState;
+            forms[5].value=result.feedback.tel;
+            forms[6].value=result.feedback.createTime;
+        }
+    });
+}
+
 // 表格
 var feedback = new Vue({
     el: '#probedata_table',
@@ -158,9 +333,8 @@ var feedback = new Vue({
                             row.push(st.get(item.treatmentState));
                             row.push(item.tel);
                             row.push(item.createTime);
-                            row.push('<a class="fontcolor" onclick="delete_this(this)" id='+item.id+'>编辑</a>&nbsp'+
-                                '<a class="fontcolor" onclick="delete_this(this)" id='+item.id+'>删除</a>&nbsp'+
-                                '<a class="fontcolor" onclick="delete_this(this)" id='+item.id+'>查看</a>');
+                            row.push('<a class="fontcolor" onclick="edit_this(this)" id='+item.id+'>编辑</a>&nbsp'+
+                                '<a class="fontcolor" onclick="delete_this(this)" id='+item.id+'>删除</a>');
                             rows.push(row);
                         });
                         returnData.data = rows;

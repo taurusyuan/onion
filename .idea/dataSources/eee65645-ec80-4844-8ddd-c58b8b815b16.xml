@@ -1242,7 +1242,7 @@
       <Position>7</Position>
       <Comment>审核状态 0为未审核 1为已审核通过 2为审核未通过</Comment>
       <DataType>tinyint(4)|0s</DataType>
-      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="296" parent="244" name="create_time">

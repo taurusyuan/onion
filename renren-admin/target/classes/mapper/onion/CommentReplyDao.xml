@@ -21,6 +21,7 @@
 
 	<select id="queryList" resultType="io.renren.modules.onion.entity.CommentReplyEntity">
 		select * from comment_reply
+		where comment_reply.id is not null
 		<if test="name != null and name != ''">
 			AND comment_reply.name LIKE concat('%',#{name},'%')
 		</if>

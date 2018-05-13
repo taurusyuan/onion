@@ -25,10 +25,8 @@ var bookList_handler = new Vue({
             bookList.reset();
         },
         testagentadd:function () {
-
         },
         testagentdelBatch:function () {
-
         }
     }
 });
@@ -130,7 +128,7 @@ var edit_data = new Vue({
             var probeJson = getFormJson($('#probeform_data'));
             status = 1;
             if (typeof(probeJson["name"]) == "undefined") {
-                toastr.warning("请录入探针名!");
+                toastr.warning("请录入书名!");
             } else {
                 var probe = JSON.stringify(probeJson);
                 console.log(probe);
